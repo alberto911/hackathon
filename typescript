@@ -1,0 +1,63 @@
+Script started on Thu 05 Mar 2015 07:28:14 PM CST
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ plugin
+plugin: command not found
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ pluginrails scd dev/hackathon/[10Prails s[1Pplugin[Kbundle
+bash: /usr/local/bin/bundle: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rails
+bash: /usr/local/bin/rails: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ cd
+]0;alberto@alberto-VirtualBox: ~alberto@alberto-VirtualBox:~$ cd dev/hackathon/
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ ls
+[0m[01;34mapp[0m  [01;34mbin[0m  [01;34mconfig[0m  config.ru  [01;34mdb[0m  Gemfile  Gemfile.lock  [01;34mlib[0m  [01;34mlog[0m  [01;34mpublic[0m  Rakefile  README.rdoc  [01;34mtest[0m  [01;34mtmp[0m  typescript  [01;34mvendor[0m
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rails
+bash: /usr/local/bin/rails: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rails s[K[K[K[K[K[K[Kgemset[K[K[K[K[K[Krvm gemset list
+Warning! PATH is not properly set up, '/home/alberto/.rvm/gems/ruby-2.2.0@rails4.2/bin' is not available,
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+         to fix temporarily in this shell session run: 'rvm use ruby-2.2.0@rails4.2'.
+[32m
+gemsets for ruby-2.2.0 (found in /home/alberto/.rvm/gems/ruby-2.2.0)[0m
+   (default)
+   global
+=> rails4.2
+
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rvm us[K[Kl[K[K[K[Kails
+bash: /usr/local/bin/rails: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ r[Krvm use ruby2[K[K[K[K[K[K[K[K[Klist
+Warning! PATH is not properly set up, '/home/alberto/.rvm/gems/ruby-2.2.0@rails4.2/bin' is not available,
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+         to fix temporarily in this shell session run: 'rvm use ruby-2.2.0@rails4.2'.
+
+rvm rubies
+
+ * [32mruby-1.9.2-p320[0m [ i686 ]
+   [32mruby-2.0.0-p247[0m [ i686 ]
+=> [32mruby-2.2.0[0m [ i686 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rvm use ruby.[K-2.0.[K[K2.0
+Warning! PATH is not properly set up, '/home/alberto/.rvm/gems/ruby-2.2.0@rails4.2/bin' is not available,
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+         to fix temporarily in this shell session run: 'rvm use ruby-2.2.0@rails4.2'.
+[32mUsing /home/alberto/.rvm/gems/ruby-2.2.0[0m
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rails
+bash: /usr/local/bin/rails: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ gemi[K install bundler
+Fetching: bundler-1.8.4.gemFetching: bundler-1.8.4.gem (  4%)Fetching: bundler-1.8.4.gem (  7%)Fetching: bundler-1.8.4.gem ( 10%)Fetching: bundler-1.8.4.gem ( 11%)Fetching: bundler-1.8.4.gem ( 14%)Fetching: bundler-1.8.4.gem ( 17%)Fetching: bundler-1.8.4.gem ( 18%)Fetching: bundler-1.8.4.gem ( 21%)Fetching: bundler-1.8.4.gem ( 24%)Fetching: bundler-1.8.4.gem ( 25%)Fetching: bundler-1.8.4.gem ( 27%)Fetching: bundler-1.8.4.gem ( 28%)Fetching: bundler-1.8.4.gem ( 31%)Fetching: bundler-1.8.4.gem ( 32%)Fetching: bundler-1.8.4.gem ( 34%)Fetching: bundler-1.8.4.gem ( 35%)Fetching: bundler-1.8.4.gem ( 38%)Fetching: bundler-1.8.4.gem ( 39%)Fetching: bundler-1.8.4.gem ( 41%)Fetching: bundler-1.8.4.gem ( 42%)Fetching: bundler-1.8.4.gem ( 44%)Fetching: bundler-1.8.4.gem ( 46%)Fetching: bundler-1.8.4.gem ( 48%)Fetching: bundler-1.8.4.gem ( 49%)Fetching: bundler-1.8.4.gem ( 51%)Fetching: bundler-1.8.4.gem ( 53%)Fetching: bundler-1.8.4.gem ( 55%)Fetching: bundler-1.8.4.gem ( 56%)Fetching: bundler-1.8.4.gem ( 58%)Fetching: bundler-1.8.4.gem ( 60%)Fetching: bundler-1.8.4.gem ( 61%)Fetching: bundler-1.8.4.gem ( 63%)Fetching: bundler-1.8.4.gem ( 65%)Fetching: bundler-1.8.4.gem ( 67%)Fetching: bundler-1.8.4.gem ( 68%)Fetching: bundler-1.8.4.gem ( 70%)Fetching: bundler-1.8.4.gem ( 72%)Fetching: bundler-1.8.4.gem ( 74%)Fetching: bundler-1.8.4.gem ( 75%)Fetching: bundler-1.8.4.gem ( 77%)Fetching: bundler-1.8.4.gem ( 78%)Fetching: bundler-1.8.4.gem ( 81%)Fetching: bundler-1.8.4.gem ( 82%)Fetching: bundler-1.8.4.gem ( 84%)Fetching: bundler-1.8.4.gem ( 85%)Fetching: bundler-1.8.4.gem ( 88%)Fetching: bundler-1.8.4.gem ( 89%)Fetching: bundler-1.8.4.gem ( 91%)Fetching: bundler-1.8.4.gem ( 92%)Fetching: bundler-1.8.4.gem ( 95%)Fetching: bundler-1.8.4.gem ( 96%)Fetching: bundler-1.8.4.gem ( 98%)Fetching: bundler-1.8.4.gem ( 99%)Fetching: bundler-1.8.4.gem (100%)Fetching: bundler-1.8.4.gem (100%)
+Successfully installed bundler-1.8.4
+Parsing documentation for bundler-1.8.4
+Installing ri documentation for bundler-1.8.4
+Done installing documentation for bundler after 9 seconds
+1 gem installed
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ rails
+bash: /usr/local/bin/rails: /usr/bin/ruby1.8: bad interpreter: No such file or directory
+]0;alberto@alberto-VirtualBox: ~/dev/hackathonalberto@alberto-VirtualBox:~/dev/hackathon$ exit
+exit
+
+Script done on Thu 05 Mar 2015 07:34:25 PM CST

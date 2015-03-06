@@ -41,6 +41,10 @@
     <%= f.label :fecha_de_fin %><br>
     <%= f.date_select :end_date %>
   </div>
+	<div class="field">
+		<%= f.label :imagen %><br>
+		<%= f.file_field :picture %>
+	</div>
   <div class="actions">
     <%= f.submit %>
   </div>

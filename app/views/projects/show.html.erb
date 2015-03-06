@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<%= image_tag(@project.picture_url, :class => "img-responsive img-hover") if @project.picture.present? %>
+</p>
+
+<p>
   <strong>Category:</strong>
   <%= @project.category %>
 </p>

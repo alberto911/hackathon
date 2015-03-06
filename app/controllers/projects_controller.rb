@@ -1,11 +1,20 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+	skip_before_action :authenticate_user!, only: [:index, :show]  
+	before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+		@search = Project.search do
+			fulltext params[:search]
+		end    
+		@projects = @search.results
   end
+
+	def my_projects
+		@projects = Project.where(:creator => current_user.id)
+		redirect_to action: 'index'
+	end
 
   # GET /projects/1
   # GET /projects/1.json
@@ -23,8 +32,8 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   # POST /projects.json
-  def create
-    @project = Project.new(project_params)
+  def create    
+		@project = Project.new(project_params)
 		@project.creator = current_user.id
 
     respond_to do |format|
@@ -70,6 +79,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:category, :description, :zone, :name, :target, :start_date, :end_date)
+      params.require(:project).permit(:category, :description, :zone, :name, :target, :start_date, :end_date, :picture)
     end
 end
