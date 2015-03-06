@@ -1,0 +1,47 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+		<%= f.label :categoría %><br>
+		<%= f.select :category, options_for_select([['Propuesta de ley', 'propuesta'], ['Petición ciudadana', 'peticion'], ['Acción social', 'accion']]), :prompt => true %>
+	</div>
+	
+  <div class="field">
+    <%= f.label :zona %><br>
+    <%= f.select :zone, options_for_select(['Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Cuajimalpa', 'Coyoacán', 'Cuauhtemoc', 'Gustavo A. Madero', 'Iztacalco', 'Iztapalapa', 'Magdalena Contreras', 'Miguel Hidalgo', 'Milpa Alta', 'Tláhuac', 'Tlalpan', 'Venustiano Carranza', 'Xochimilco']), :prompt => true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :name %>
+  </div>
+	<div class="field">
+    <%= f.label :descripción %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :meta_de_agentes_de_cambio %><br>
+    <%= f.number_field :target %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_de_inicio %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_de_fin %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

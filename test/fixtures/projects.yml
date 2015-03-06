@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  creator: 
+  description: MyText
+  zone: MyString
+  name: MyString
+  target: 
+  start_date: 2015-03-05
+  end_date: 2015-03-05
+
+two:
+  category: MyString
+  creator: 
+  description: MyText
+  zone: MyString
+  name: MyString
+  target: 
+  start_date: 2015-03-05
+  end_date: 2015-03-05
