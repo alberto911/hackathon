@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+		@created_projects = Project.where(:creator => @user.id)
+		@joined_projects = Project.select("projects.id, projects.name, projects.picture, projects.description, projects.category").joins("JOIN projects_users ON projects_users.project_id = projects.id").where("projects_users.user_id = ?", @user.id)
   end
 
   # GET /users/new
@@ -60,6 +62,17 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+	def join_project
+		unless current_user.has_joined?(params[:id])		
+			@projects_users = ProjectsUser.new({project_id: params[:id], user_id: current_user.id, is_admin: false})
+			if @projects_users.save
+				redirect_to root_url, notice: "Te has unido exitosamente"
+    	end
+		else
+			redirect_to root_url, alert: "Ya te has unido a la causa"
+		end
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.

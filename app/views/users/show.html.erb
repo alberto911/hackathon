@@ -1,4 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="page_header">
+	<h1><%= @user.name %></h1>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h3>Causas que ha creado</h3>
+
+<ul class="thumbnails">
+	<div class="row">
+	<% @created_projects.each do |project| %>  
+		<div class="col-md-3">
+		  <div class="thumbnail">
+				<%= image_tag(project.picture_url, :size => "300x200", :class => "img-responsive img-hover") if project.picture.present? %>
+		    <h3>
+					<%= link_to project.name, project, class: 'btn-link' %>
+				</h3>
+		    <p>
+					<%= project.description %>
+				</p>
+		  </div>
+		</div>
+	<% end %>
+	</div>
+</ul>
+
+<br>
+
+<h3>Causas que sigue</h3>
+
+<ul class="thumbnails">
+	<div class="row">
+	<% @joined_projects.each do |project| %>  
+		<div class="col-md-3">
+		  <div class="thumbnail">
+				<%= image_tag(project.picture_url, :size => "300x200", :class => "img-responsive img-hover") if project.picture.present? %>
+		    <h3>
+					<%= link_to project.name, project, class: 'btn-link' %>
+				</h3>
+		    <p>
+					<%= project.description %>
+				</p>
+		  </div>
+		</div>
+	<% end %>
+	</div>
+</ul>

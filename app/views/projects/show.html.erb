@@ -1,48 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="page_header">
+		<h1><%= @project.name %><br><small><%= @total %> seguidores </small></h1>
+	</div>
+
+	<% if user_signed_in? %>
+		<% if current_user.id == @project.creator %>	
+			<%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-link btn-lg' %>
+		<% end %>
+		<% unless current_user.id == @project.creator %>
+			<%= link_to 'Únete', join_project_path(@project), class: 'btn btn-primary btn-large' %>
+		<% end %>
+	<% end %>
+</div>
+<br>
 
 <p>
-	<%= image_tag(@project.picture_url, :class => "img-responsive img-hover") if @project.picture.present? %>
+	<%= image_tag(@project.picture_url, :size => "300x200", :class => "img-responsive img-hover") if @project.picture.present? %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
+<table class="table">
+  <tbody>
+      <tr>
+        <td><strong>Líder de la causa:</strong></td>
+        <td><%= link_to @user.name, @user, class: 'btn-link' %></td>
+      </tr>
+			<tr>
+        <td><strong>Categoría:</strong></td>
+        <td><%= @project.category %></td>
+      </tr>
+			<tr>
+        <td><strong>Zona:</strong></td>
+        <td><%= @project.zone %></td>
+      </tr>
+			<tr>
+        <td><strong>Descripción:</strong></td>
+        <td><%= @project.description %></td>
+      </tr>
+			<tr>
+        <td><strong>Meta de agentes de cambio:</strong></td>
+        <td><%= @project.target %></td>
+      </tr>
+			<tr>
+        <td><strong>Fecha de inicio:</strong></td>
+        <td><%= @project.start_date %></td>
+      </tr>
+			<tr>
+        <td><strong>Fecha de fin:</strong></td>
+        <td><%= @project.end_date %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @project.creator %>
-</p>
+<br><br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+<h4>Usuarios que se han unido</h4>
 
-<p>
-  <strong>Zone:</strong>
-  <%= @project.zone %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Target:</strong>
-  <%= @project.target %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @project.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @project.end_date %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<table class="table">
+  <tbody>
+    <% @followers.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>

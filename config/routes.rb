@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :users do
-		resources :projects
-	end
+  resources :users
+
+	get '/join_project/:id', to: 'users#join_project', as: 'join_project'
 
   root to: 'projects#index'
   # The priority is based upon order of creation: first created -> highest priority.

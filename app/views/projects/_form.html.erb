@@ -11,41 +11,41 @@
     </div>
   <% end %>
 
-	<div class="field">
+	<div class="form-group">
 		<%= f.label :categoría %><br>
-		<%= f.select :category, options_for_select([['Propuesta de ley', 'propuesta'], ['Petición ciudadana', 'peticion'], ['Acción social', 'accion']]), :prompt => true %>
+		<%= f.select :category, options_for_select(['Propuesta de ley', 'Petición ciudadana', 'Acción social']), :prompt => true, class: 'form-control' %>
 	</div>
 	
-  <div class="field">
+  <div class="form-group">
     <%= f.label :zona %><br>
-    <%= f.select :zone, options_for_select(['Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Cuajimalpa', 'Coyoacán', 'Cuauhtemoc', 'Gustavo A. Madero', 'Iztacalco', 'Iztapalapa', 'Magdalena Contreras', 'Miguel Hidalgo', 'Milpa Alta', 'Tláhuac', 'Tlalpan', 'Venustiano Carranza', 'Xochimilco']), :prompt => true %>
+    <%= f.select :zone, options_for_select(['Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Cuajimalpa', 'Coyoacán', 'Cuauhtemoc', 'Gustavo A. Madero', 'Iztacalco', 'Iztapalapa', 'Magdalena Contreras', 'Miguel Hidalgo', 'Milpa Alta', 'Tláhuac', 'Tlalpan', 'Venustiano Carranza', 'Xochimilco']), :prompt => true, class: 'form-control' %>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :nombre %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-	<div class="field">
+	<div class="form-group">
     <%= f.label :descripción %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :meta_de_agentes_de_cambio %><br>
-    <%= f.number_field :target %>
+    <%= f.number_field :target, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fecha_de_inicio %><br>
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fecha_de_fin %><br>
-    <%= f.date_select :end_date %>
+    <%= f.date_select :end_date, class: 'form-control' %>
   </div>
-	<div class="field">
+	<div class="form-group">
 		<%= f.label :imagen %><br>
-		<%= f.file_field :picture %>
+		<%= f.file_field :picture, class: 'btn' %>
 	</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear", class: 'btn btn-primary btn-md' %>
   </div>
 <% end %>

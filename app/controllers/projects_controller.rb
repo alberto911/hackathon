@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show]  
-	before_action :set_project, only: [:show, :edit, :update, :destroy]
+	before_action :set_project, only: [:show, :edit, :update, :destroy, :validate_creator]
+	before_action :validate_creator, only: [:edit, :destroy]
 
   # GET /projects
   # GET /projects.json
@@ -11,14 +12,12 @@ class ProjectsController < ApplicationController
 		@projects = @search.results
   end
 
-	def my_projects
-		@projects = Project.where(:creator => current_user.id)
-		redirect_to action: 'index'
-	end
-
   # GET /projects/1
   # GET /projects/1.json
   def show
+		@user = User.find(@project.creator)
+		@total = ProjectsUser.where(project_id: @project.id).count
+		@followers = User.select("users.id, users.name, users.email").joins("JOIN projects_users ON projects_users.user_id = users.id").where("projects_users.project_id = ?", @project.id)
   end
 
   # GET /projects/new
@@ -63,8 +62,8 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   # DELETE /projects/1.json
-  def destroy
-    @project.destroy
+  def destroy   
+		@project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,6 +71,12 @@ class ProjectsController < ApplicationController
   end
 
   private
+		def validate_creator
+			unless current_user.id == @project.creator
+				redirect_to root_url, alert: "No tienes los permisos necesarios" 
+			end
+		end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])

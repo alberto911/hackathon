@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :projects
+
+	def has_joined?(project_id)
+		@project_user = ProjectsUser.where("projects_users.user_id = ? and projects_users.project_id = ?", self.id, project_id)
+		!@project_user.empty? 
+	end
+
 end

@@ -25,7 +25,9 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Causas</a></li>
 				<% if user_signed_in? %>
-					<li class="active"><a href="/">Mis causas</a></li>
+					<li class="active">
+						<%= link_to 'Mis causas', current_user %>
+					</li>
 				<% end %>
       </ul>
 	<p class="navbar-text pull-right">
@@ -34,8 +36,8 @@
 	  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+	  <%= link_to "Sign up", new_user_registration_path, :class => 'btn-link'  %> |
+	  <%= link_to "Login", new_user_session_path, :class => 'btn-link'  %>
 	<% end %>
     </div>
   </div>
@@ -55,7 +57,6 @@
 
 <footer>
   <div class="container">
-    Hackathon
   </div>
 </footer>
 <script src="//railsgirls.com/assets/bootstrap.js"></script>
